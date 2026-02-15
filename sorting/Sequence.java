@@ -1,7 +1,7 @@
 /*
 * Class: Sorting algorithm
 * Data structure: Array
-* Version: 0.0.3
+* Version: 0.0.4
 * Author: Mohammad Hasan
 */
 package algo.sort;
@@ -40,6 +40,19 @@ public final class Sequence {
 
     public static void insertionSort(double[] array) {
         double key = 0.0;
+        for (j = 1; j < array.length; j++) {
+            key = array[j];
+            i = j - 1;
+            while ((i > -1) && (array[i] > key)) {
+                array[i + 1] = array[i];
+                i--;
+            }
+            array[i + 1] = key;
+        }
+    }
+
+    public static void insertionSort(float[] array) {
+        float key = 0.0f;
         for (j = 1; j < array.length; j++) {
             key = array[j];
             i = j - 1;
