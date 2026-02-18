@@ -1,7 +1,7 @@
 /*
 * Class: Sorting algorithm
 * Data structure: Array
-* Version: 0.0.6
+* Version: 0.0.7
 * Author: Mohammad Hasan
 */
 package algo;
@@ -96,6 +96,19 @@ public final class Sequence {
             key = array[j];
             i = j - 1;
             while ((i > -1) && (array[i] > key)) {
+                array[i + 1] = array[i];
+                i--;
+            }
+            array[i + 1] = key;
+        }
+    }
+
+    public static <T extends Comparable<T>> void insertionSort(T[] array) {
+        T key = null;
+        for (j = 1; j < array.length; j++) {
+            key = array[j];
+            i = j - 1;
+            while ((i > -1) && (array[i].compareTo(key) > 0)) {
                 array[i + 1] = array[i];
                 i--;
             }
