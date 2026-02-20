@@ -1,7 +1,7 @@
 /*
-* Algorithms: Insertion sort, Reverse
+* Algorithms: Insertion sort
 * Abstract data type: Sequence
-* Version: 0.0.8
+* Version: 0.0.9
 * Author: Mohammad Hasan
 */
 package algo;
@@ -118,6 +118,19 @@ public final class Sequence {
 
     public static void reverse(byte[] array) {
         byte temp = 0;
+        start = 0;
+        end = array.length - 1;
+        while (start < end) {
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    public static void reverse(char[] array) {
+        char temp = '0';
         start = 0;
         end = array.length - 1;
         while (start < end) {
