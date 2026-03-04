@@ -1,7 +1,7 @@
 /*
 * Algorithms: Insertion sort
 * Abstract data type: Sequence
-* Version: 0.1.1
+* Version: 0.1.2
 * Author: Mohammad Hasan
 */
 package algo;
@@ -12,9 +12,9 @@ public final class Sequence {
 
     private Sequence() {}
 
-    public static void insertionSort(byte[] array, boolean nonincrease) {
+    public static void insertionSort(byte[] array, boolean nonincreasingOrder) {
         byte key = 0;
-        if (nonincrease) {
+        if (nonincreasingOrder) {
             for (end = 1; end < array.length; end++) {
                 key = array[end];
                 start = end - 1;
@@ -41,9 +41,9 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static void insertionSort(char[] array, boolean nonincrease) {
+    public static void insertionSort(char[] array, boolean nonincreasingOrder) {
         char key = '0';
-        if (nonincrease) {
+        if (nonincreasingOrder) {
             for (end = 1; end < array.length; end++) {
                 key = array[end];
                 start = end - 1;
@@ -70,8 +70,20 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static void insertionSort(double[] array) {
+    public static void insertionSort(double[] array, boolean nonincreasingOrder) {
         double key = 0.0;
+        if (nonincreasingOrder) {
+            for (end = 1; end < array.length; end++) {
+                key = array[end];
+                start = end - 1;
+                while ((start > -1) && (array[start] < key)) {
+                    array[start + 1] = array[start];
+                    start--;
+                }
+                array[start + 1] = key; 
+            }
+            return;
+        }
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -81,6 +93,10 @@ public final class Sequence {
             }
             array[start + 1] = key;
         }
+    }
+
+    public static void insertionSort(double[] array) {
+        insertionSort(array, false);
     }
 
     public static void insertionSort(float[] array) {
