@@ -1,7 +1,7 @@
 /*
 * Algorithms: Insertion sort
 * Abstract data type: Sequence
-* Version: 0.1.4
+* Version: 0.1.5
 * Author: Mohammad Hasan
 */
 package algo;
@@ -157,8 +157,20 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static void insertionSort(long[] array) {
+    public static void insertionSort(long[] array, boolean nonincreasingOrder) {
         long key = 0L;
+        if (nonincreasingOrder) {
+            for (end = 1; end < array.length; end++) {
+                key = array[end];
+                start = end - 1;
+                while ((start > -1) && (array[start] < key)) {
+                    array[start + 1] = array[start];
+                    start--;
+                }
+                array[start + 1] = key;
+            }
+            return;
+        }
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -168,6 +180,10 @@ public final class Sequence {
             }
             array[start + 1] = key;
         }
+    }
+
+    public static void insertionSort(long[] array) {
+        insertionSort(array, false);
     }
 
     public static void insertionSort(short[] array) {
