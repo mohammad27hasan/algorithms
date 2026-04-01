@@ -1,7 +1,7 @@
 /*
-* Algorithms: Insertion sort
+* Algorithm: Insertion sort
 * Abstract data type: Sequence
-* Version: 0.1.6
+* Version: 0.1.7
 * Author: Mohammad Hasan
 */
 package algo;
@@ -215,8 +215,20 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static <T extends Comparable<T>> void insertionSort(T[] array) {
+    public static <T extends Comparable<T>> void insertionSort(T[] array, boolean nonincreasingOrder) {
         T key = null;
+        if (nonincreasingOrder) {
+            for (end = 1; end < array.length; end++) {
+                key = array[end];
+                start = end - 1;
+                while ((start > -1) && (array[start].compareTo(key) < 0)) {
+                    array[start + 1] = array[start];
+                    start--;
+                }
+                array[start + 1] = key;
+            }
+            return;
+        }
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -228,29 +240,7 @@ public final class Sequence {
         }
     }
 
-    public static void reverse(byte[] array) {
-        byte temp = 0;
-        start = 0;
-        end = array.length - 1;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
-    }
-
-    public static void reverse(char[] array) {
-        char temp = '0';
-        start = 0;
-        end = array.length - 1;
-        while (start < end) {
-            temp = array[start];
-            array[start] = array[end];
-            array[end] = temp;
-            start++;
-            end--;
-        }
+    public static <T extends Comparable<T>> void insertionSort(T[] array) {
+        insertionSort(array, false);
     }
 }
