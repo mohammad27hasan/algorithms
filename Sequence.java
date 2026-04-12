@@ -1,7 +1,7 @@
 /*
 * Algorithms: Insertion sort, Selection sort
 * Abstract data type: Sequence
-* Version: 0.1.8
+* Version: 0.1.9
 * Author: Mohammad Hasan
 */
 package algo;
@@ -274,5 +274,9 @@ public final class Sequence {
             }
             exchange(array, start, smallest);
         }
+    }
+
+    public static void selectionSort(byte[] array) {
+        selectionSort(array, false);
     }
 }
