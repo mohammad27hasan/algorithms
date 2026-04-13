@@ -1,7 +1,7 @@
 /*
 * Algorithms: Insertion sort, Selection sort
 * Abstract data type: Sequence
-* Version: 0.1.9
+* Version: 0.2
 * Author: Mohammad Hasan
 */
 package algo;
@@ -245,9 +245,9 @@ public final class Sequence {
     }
 
     private static void exchange(byte[] array, int i, int j) {
-        byte key = array[i];
+        byte temporary = array[i];
         array[i] = array[j];
-        array[j] = key;
+        array[j] = temporary;
     }
 
     public static void selectionSort(byte[] array, boolean nonincreasingOrder) {
@@ -277,6 +277,42 @@ public final class Sequence {
     }
 
     public static void selectionSort(byte[] array) {
+        selectionSort(array, false);
+    }
+
+    private static void exchange(char[] array, int i, int j) {
+        char temporary = array[i];
+        array[i] = array[j];
+        array[j] = temporary;
+    }
+
+    public static void selectionSort(char[] array, boolean nonincreasingOrder) {
+        if (nonincreasingOrder) {
+            int largest = -1;
+            for (start = 0; start < (array.length - 1); start++) {
+                largest = start;
+                for (end = start + 1; end < array.length; end++) {
+                    if (array[end] > array[largest]) {
+                        largest = end;
+                    }
+                }
+                exchange(array, start, largest);
+            }
+            return;
+        }
+        int smallest = -1;
+        for (start = 0; start < (array.length - 1); start++) {
+            smallest = start;
+            for (end = start + 1; end < array.length; end++) {
+                if (array[end] < array[smallest]) {
+                    smallest = end;
+                }
+            }
+            exchange(array, start, smallest);
+        }
+    }
+
+    public static void selectionSort(char[] array) {
         selectionSort(array, false);
     }
 }
