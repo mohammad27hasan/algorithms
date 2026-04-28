@@ -1,7 +1,7 @@
 /*
 * Algorithms: Insertion sort, Selection sort
 * Abstract data type: Sequence
-* Version: 0.2.2
+* Version: 0.2.3
 * Author: Mohammad Hasan
 */
 package algo;
@@ -252,7 +252,7 @@ public final class Sequence {
 
     public static void selectionSort(byte[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
-            int largest = -1;
+            int largest = 0;
             for (start = 0; start < (array.length - 1); start++) {
                 largest = start;
                 for (end = start + 1; end < array.length; end++) {
@@ -264,7 +264,7 @@ public final class Sequence {
             }
             return;
         }
-        int smallest = -1;
+        int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
             for (end = start + 1; end < array.length; end++) {
@@ -288,7 +288,7 @@ public final class Sequence {
 
     public static void selectionSort(char[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
-            int largest = -1;
+            int largest = 0;
             for (start = 0; start < (array.length - 1); start++) {
                 largest = start;
                 for (end = start + 1; end < array.length; end++) {
@@ -300,7 +300,7 @@ public final class Sequence {
             }
             return;
         }
-        int smallest = -1;
+        int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
             for (end = start + 1; end < array.length; end++) {
@@ -324,7 +324,7 @@ public final class Sequence {
 
     public static void selectionSort(double[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
-            int largest = -1;
+            int largest = 0;
             for (start = 0; start < (array.length - 1); start++) {
                 largest = start;
                 for (end = start + 1; end < array.length; end++) {
@@ -336,7 +336,7 @@ public final class Sequence {
             }
             return;
         }
-        int smallest = -1;
+        int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
             for (end = start + 1; end < array.length; end++) {
@@ -360,7 +360,7 @@ public final class Sequence {
 
     public static void selectionSort(float[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
-            int largest = -1;
+            int largest = 0;
             for (start = 0; start < (array.length - 1); start++) {
                 largest = start;
                 for (end = start + 1; end < array.length; end++) {
@@ -372,7 +372,7 @@ public final class Sequence {
             }
             return;
         }
-        int smallest = -1;
+        int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
             for (end = start + 1; end < array.length; end++) {
@@ -385,6 +385,42 @@ public final class Sequence {
     }
 
     public static void selectionSort(float[] array) {
+        selectionSort(array, false);
+    }
+
+    private static void exchange(int[] array, int i, int j) {
+        int temporary = array[i];
+        array[i] = array[j];
+        array[j] = temporary;
+    }
+
+    public static void selectionSort(int[] array, boolean nonincreasingOrder) {
+        if (nonincreasingOrder) {
+            int largest = 0;
+            for (start = 0; start < (array.length - 1); start++) {
+                largest = start;
+                for (end = start + 1; end < array.length; end++) {
+                    if (array[end] > array[largest]) {
+                        largest = end;
+                    }
+                }
+                exchange(array, start, largest);
+            }
+            return;
+        }
+        int smallest = 0;
+        for (start = 0; start < (array.length - 1); start++) {
+            smallest = start;
+            for (end = start + 1; end < array.length; end++) {
+                if (array[end] < array[smallest]) {
+                    smallest = end;
+                }
+            }
+            exchange(array, start, smallest);
+        }
+    }
+
+    public static void selectionSort(int[] array) {
         selectionSort(array, false);
     }
 }
