@@ -1,7 +1,7 @@
 /*
 * Algorithms: Insertion sort, Selection sort
 * Abstract data type: Sequence
-* Version: 0.2.4
+* Version: 0.2.5
 * Author: Mohammad Hasan
 */
 package algo;
@@ -457,6 +457,42 @@ public final class Sequence {
     }
 
     public static void selectionSort(long[] array) {
+        selectionSort(array, false);
+    }
+
+    private static void exchange(short[] array, int i, int j) {
+        short temporary = array[i];
+        array[i] = array[j];
+        array[j] = temporary;
+    }
+
+    public static void selectionSort(short[] array, boolean nonincreasingOrder) {
+        if (nonincreasingOrder) {
+            int largest = 0;
+            for (start = 0; start < (array.length - 1); start++) {
+                largest = start;
+                for (end = start + 1; end < array.length; end++) {
+                    if (array[end] > array[largest]) {
+                        largest = end;
+                    }
+                }
+                exchange(array, start, largest);
+            }
+            return;
+        }
+        int smallest = 0;
+        for (start = 0; start < (array.length - 1); start++) {
+            smallest = start;
+            for (end = start + 1; end < array.length; end++) {
+                if (array[end] < array[smallest]) {
+                    smallest = end;
+                }
+            }
+            exchange(array, start, smallest);
+        }
+    }
+
+    public static void selectionSort(short[] array) {
         selectionSort(array, false);
     }
 }
