@@ -1,7 +1,7 @@
 /*
 * Algorithms: Insertion sort, Selection sort
 * Abstract data type: Sequence
-* Version: 0.2.5
+* Version: 0.2.6
 * Author: Mohammad Hasan
 */
 package algo;
@@ -26,6 +26,7 @@ public final class Sequence {
             }
             return;
         }
+
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -55,6 +56,7 @@ public final class Sequence {
             }
             return;
         }
+
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -84,6 +86,7 @@ public final class Sequence {
             }
             return;
         }
+
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -113,6 +116,7 @@ public final class Sequence {
             }
             return;
         }
+
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -142,6 +146,7 @@ public final class Sequence {
             }
             return;
         }
+
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -171,6 +176,7 @@ public final class Sequence {
             }
             return;
         }
+
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -200,6 +206,7 @@ public final class Sequence {
             }
             return;
         }
+
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -229,6 +236,7 @@ public final class Sequence {
             }
             return;
         }
+
         for (end = 1; end < array.length; end++) {
             key = array[end];
             start = end - 1;
@@ -264,6 +272,7 @@ public final class Sequence {
             }
             return;
         }
+        
         int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
@@ -300,6 +309,7 @@ public final class Sequence {
             }
             return;
         }
+        
         int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
@@ -336,6 +346,7 @@ public final class Sequence {
             }
             return;
         }
+        
         int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
@@ -372,6 +383,7 @@ public final class Sequence {
             }
             return;
         }
+        
         int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
@@ -408,6 +420,7 @@ public final class Sequence {
             }
             return;
         }
+        
         int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
@@ -444,6 +457,7 @@ public final class Sequence {
             }
             return;
         }
+        
         int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
@@ -480,6 +494,7 @@ public final class Sequence {
             }
             return;
         }
+        
         int smallest = 0;
         for (start = 0; start < (array.length - 1); start++) {
             smallest = start;
@@ -493,6 +508,43 @@ public final class Sequence {
     }
 
     public static void selectionSort(short[] array) {
+        selectionSort(array, false);
+    }
+
+    private static <T> void exchange(T[] array, int i, int j) {
+        T temporary = array[i];
+        array[i] = array[j];
+        array[j] = temporary;
+    }
+
+    public static <T extends Comparable<T>> void selectionSort(T[] array, boolean nonincreasingOrder) {
+        if (nonincreasingOrder) {
+            int largest = 0;
+            for (start = 0; start < (array.length - 1); start++) {
+                largest = start;
+                for (end = start + 1; end < array.length; end++) {
+                    if (array[end].compareTo(array[largest]) > 0) {
+                        largest = end;
+                    }
+                }
+                exchange(array, start, largest);
+            }
+            return;
+        }
+        
+        int smallest = 0;
+        for (start = 0; start < (array.length - 1); start++) {
+            smallest = start;
+            for (end = start + 1; end < array.length; end++) {
+                if (array[end].compareTo(array[smallest]) < 0) {
+                    smallest = end;
+                }
+            }
+            exchange(array, start, smallest);
+        }
+    }
+
+    public static <T extends Comparable<T>> void selectionSort(T[] array) {
         selectionSort(array, false);
     }
 }
