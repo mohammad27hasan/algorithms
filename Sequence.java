@@ -1,40 +1,40 @@
 /*
 * Algorithms: Insertion sort, Selection sort
 * Abstract data type: Sequence
-* Version: 0.2.6
+* Version: 0.2.7
 * Author: Mohammad Hasan
 */
 package algo;
 
 public final class Sequence {
-    private static int start;
-    private static int end;
 
     private Sequence() {}
 
     public static void insertionSort(byte[] array, boolean nonincreasingOrder) {
         byte key = 0;
+        int i = 0;
+
         if (nonincreasingOrder) {
-            for (end = 1; end < array.length; end++) {
-                key = array[end];
-                start = end - 1;
-                while ((start > -1) && (array[start] < key)) {
-                    array[start + 1] = array[start];
-                    start--;
+            for (int j = 1; j < array.length; j++) {
+                key = array[j];
+                i = j - 1;
+                while ((i > -1) && (array[i] < key)) {
+                    array[i + 1] = array[i];
+                    i--;
                 }
-                array[start + 1] = key;
+                array[i + 1] = key;
             }
             return;
         }
 
-        for (end = 1; end < array.length; end++) {
-            key = array[end];
-            start = end - 1;
-            while ((start > -1) && (array[start] > key)) {
-                array[start + 1] = array[start];
-                start--;
+        for (int j = 1; j < array.length; j++) {
+            key = array[j];
+            i = j - 1;
+            while ((i > -1) && (array[i] > key)) {
+                array[i + 1] = array[i];
+                i--;
             }
-            array[start + 1] = key;
+            array[i + 1] = key;
         }
     }
 
@@ -44,27 +44,29 @@ public final class Sequence {
 
     public static void insertionSort(char[] array, boolean nonincreasingOrder) {
         char key = '0';
+        int i = 0;
+
         if (nonincreasingOrder) {
-            for (end = 1; end < array.length; end++) {
-                key = array[end];
-                start = end - 1;
-                while ((start > -1) && (array[start] < key)) {
-                    array[start + 1] = array[start];
-                    start--;
+            for (int j = 1; j < array.length; j++) {
+                key = array[j];
+                i = j - 1;
+                while ((i > -1) && (array[i] < key)) {
+                    array[i + 1] = array[i];
+                    i--;
                 }
-                array[start + 1] = key;
+                array[i + 1] = key;
             }
             return;
         }
 
-        for (end = 1; end < array.length; end++) {
-            key = array[end];
-            start = end - 1;
-            while ((start > -1) && (array[start] > key)) {
-                array[start + 1] = array[start];
-                start--;
+        for (int j = 1; j < array.length; j++) {
+            key = array[j];
+            i = j - 1;
+            while ((i > -1) && (array[i] > key)) {
+                array[i + 1] = array[i];
+                i--;
             }
-            array[start + 1] = key;
+            array[i + 1] = key;
         }
     }
 
@@ -74,27 +76,29 @@ public final class Sequence {
 
     public static void insertionSort(double[] array, boolean nonincreasingOrder) {
         double key = 0.0;
+        int i = 0;
+
         if (nonincreasingOrder) {
-            for (end = 1; end < array.length; end++) {
-                key = array[end];
-                start = end - 1;
-                while ((start > -1) && (array[start] < key)) {
-                    array[start + 1] = array[start];
-                    start--;
+            for (int j = 1; j < array.length; j++) {
+                key = array[j];
+                i = j - 1;
+                while ((i > -1) && (array[i] < key)) {
+                    array[i + 1] = array[i];
+                    i--;
                 }
-                array[start + 1] = key; 
+                array[i + 1] = key; 
             }
             return;
         }
 
-        for (end = 1; end < array.length; end++) {
-            key = array[end];
-            start = end - 1;
-            while ((start > -1) && (array[start] > key)) {
-                array[start + 1] = array[start];
-                start--;
+        for (int j = 1; j < array.length; j++) {
+            key = array[j];
+            i = j - 1;
+            while ((i > -1) && (array[i] > key)) {
+                array[i + 1] = array[i];
+                i--;
             }
-            array[start + 1] = key;
+            array[i + 1] = key;
         }
     }
 
@@ -104,27 +108,29 @@ public final class Sequence {
 
     public static void insertionSort(float[] array, boolean nonincreasingOrder) {
         float key = 0.0f;
+        int i = 0;
+
         if (nonincreasingOrder) {
-            for (end = 1; end < array.length; end++) {
-                key = array[end];
-                start = end - 1;
-                while ((start > -1) && (array[start] < key)) {
-                    array[start + 1] = array[start];
-                    start--;
+            for (int j = 1; j < array.length; j++) {
+                key = array[j];
+                i = j - 1;
+                while ((i > -1) && (array[i] < key)) {
+                    array[i + 1] = array[i];
+                    i--;
                 }
-                array[start + 1] = key;
+                array[i + 1] = key;
             }
             return;
         }
 
-        for (end = 1; end < array.length; end++) {
-            key = array[end];
-            start = end - 1;
-            while ((start > -1) && (array[start] > key)) {
-                array[start + 1] = array[start];
-                start--;
+        for (int j = 1; j < array.length; j++) {
+            key = array[j];
+            i = j - 1;
+            while ((i > -1) && (array[i] > key)) {
+                array[i + 1] = array[i];
+                i--;
             }
-            array[start + 1] = key;
+            array[i + 1] = key;
         }
     }
 
@@ -134,27 +140,29 @@ public final class Sequence {
 
     public static void insertionSort(int[] array, boolean nonincreasingOrder) {
         int key = 0;
+        int i = 0;
+
         if (nonincreasingOrder) {
-            for (end = 1; end < array.length; end++) {
-                key = array[end];
-                start = end - 1;
-                while ((start > -1) && (array[start] < key)) {
-                    array[start + 1] = array[start];
-                    start--;
+            for (int j = 1; j < array.length; j++) {
+                key = array[j];
+                i = j - 1;
+                while ((i > -1) && (array[i] < key)) {
+                    array[i + 1] = array[i];
+                    i--;
                 }
-                array[start + 1] = key;
+                array[i + 1] = key;
             }
             return;
         }
 
-        for (end = 1; end < array.length; end++) {
-            key = array[end];
-            start = end - 1;
-            while ((start > -1) && (array[start] > key)) {
-                array[start + 1] = array[start];
-                start--;
+        for (int j = 1; j < array.length; j++) {
+            key = array[j];
+            i = j - 1;
+            while ((i > -1) && (array[i] > key)) {
+                array[i + 1] = array[i];
+                i--;
             }
-            array[start + 1] = key;
+            array[i + 1] = key;
         }
     }
 
@@ -164,27 +172,29 @@ public final class Sequence {
 
     public static void insertionSort(long[] array, boolean nonincreasingOrder) {
         long key = 0L;
+        int i = 0;
+
         if (nonincreasingOrder) {
-            for (end = 1; end < array.length; end++) {
-                key = array[end];
-                start = end - 1;
-                while ((start > -1) && (array[start] < key)) {
-                    array[start + 1] = array[start];
-                    start--;
+            for (int j = 1; j < array.length; j++) {
+                key = array[j];
+                i = j - 1;
+                while ((i > -1) && (array[i] < key)) {
+                    array[i + 1] = array[i];
+                    i--;
                 }
-                array[start + 1] = key;
+                array[i + 1] = key;
             }
             return;
         }
 
-        for (end = 1; end < array.length; end++) {
-            key = array[end];
-            start = end - 1;
-            while ((start > -1) && (array[start] > key)) {
-                array[start + 1] = array[start];
-                start--;
+        for (int j = 1; j < array.length; j++) {
+            key = array[j];
+            i = j - 1;
+            while ((i > -1) && (array[i] > key)) {
+                array[i + 1] = array[i];
+                i--;
             }
-            array[start + 1] = key;
+            array[i + 1] = key;
         }
     }
 
@@ -194,27 +204,29 @@ public final class Sequence {
 
     public static void insertionSort(short[] array, boolean nonincreasingOrder) {
         short key = 0;
+        int i = 0;
+
         if (nonincreasingOrder) {
-            for (end = 1; end < array.length; end++) {
-                key = array[end];
-                start = end - 1;
-                while ((start > -1) && (array[start] < key)) {
-                    array[start + 1] = array[start];
-                    start--;
+            for (int j = 1; j < array.length; j++) {
+                key = array[j];
+                i = j - 1;
+                while ((i > -1) && (array[i] < key)) {
+                    array[i + 1] = array[i];
+                    i--;
                 }
-                array[start + 1] = key;
+                array[i + 1] = key;
             }
             return;
         }
 
-        for (end = 1; end < array.length; end++) {
-            key = array[end];
-            start = end - 1;
-            while ((start > -1) && (array[start] > key)) {
-                array[start + 1] = array[start];
-                start--;
+        for (int j = 1; j < array.length; j++) {
+            key = array[j];
+            i = j - 1;
+            while ((i > -1) && (array[i] > key)) {
+                array[i + 1] = array[i];
+                i--;
             }
-            array[start + 1] = key;
+            array[i + 1] = key;
         }
     }
 
@@ -224,27 +236,29 @@ public final class Sequence {
 
     public static <T extends Comparable<T>> void insertionSort(T[] array, boolean nonincreasingOrder) {
         T key = null;
+        int i = 0;
+
         if (nonincreasingOrder) {
-            for (end = 1; end < array.length; end++) {
-                key = array[end];
-                start = end - 1;
-                while ((start > -1) && (array[start].compareTo(key) < 0)) {
-                    array[start + 1] = array[start];
-                    start--;
+            for (int j = 1; j < array.length; j++) {
+                key = array[j];
+                i = j - 1;
+                while ((i > -1) && (array[i].compareTo(key) < 0)) {
+                    array[i + 1] = array[i];
+                    i--;
                 }
-                array[start + 1] = key;
+                array[i + 1] = key;
             }
             return;
         }
 
-        for (end = 1; end < array.length; end++) {
-            key = array[end];
-            start = end - 1;
-            while ((start > -1) && (array[start].compareTo(key) > 0)) {
-                array[start + 1] = array[start];
-                start--;
+        for (int j = 1; j < array.length; j++) {
+            key = array[j];
+            i = j - 1;
+            while ((i > -1) && (array[i].compareTo(key) > 0)) {
+                array[i + 1] = array[i];
+                i--;
             }
-            array[start + 1] = key;
+            array[i + 1] = key;
         }
     }
 
@@ -261,27 +275,27 @@ public final class Sequence {
     public static void selectionSort(byte[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
             int largest = 0;
-            for (start = 0; start < (array.length - 1); start++) {
-                largest = start;
-                for (end = start + 1; end < array.length; end++) {
-                    if (array[end] > array[largest]) {
-                        largest = end;
+            for (int i = 0; i < (array.length - 1); i++) {
+                largest = i;
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] > array[largest]) {
+                        largest = j;
                     }
                 }
-                exchange(array, start, largest);
+                exchange(array, i, largest);
             }
             return;
         }
         
         int smallest = 0;
-        for (start = 0; start < (array.length - 1); start++) {
-            smallest = start;
-            for (end = start + 1; end < array.length; end++) {
-                if (array[end] < array[smallest]) {
-                    smallest = end;
+        for (int i = 0; i < (array.length - 1); i++) {
+            smallest = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[smallest]) {
+                    smallest = j;
                 }
             }
-            exchange(array, start, smallest);
+            exchange(array, i, smallest);
         }
     }
 
@@ -298,27 +312,27 @@ public final class Sequence {
     public static void selectionSort(char[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
             int largest = 0;
-            for (start = 0; start < (array.length - 1); start++) {
-                largest = start;
-                for (end = start + 1; end < array.length; end++) {
-                    if (array[end] > array[largest]) {
-                        largest = end;
+            for (int i = 0; i < (array.length - 1); i++) {
+                largest = i;
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] > array[largest]) {
+                        largest = j;
                     }
                 }
-                exchange(array, start, largest);
+                exchange(array, i, largest);
             }
             return;
         }
         
         int smallest = 0;
-        for (start = 0; start < (array.length - 1); start++) {
-            smallest = start;
-            for (end = start + 1; end < array.length; end++) {
-                if (array[end] < array[smallest]) {
-                    smallest = end;
+        for (int i = 0; i < (array.length - 1); i++) {
+            smallest = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[smallest]) {
+                    smallest = j;
                 }
             }
-            exchange(array, start, smallest);
+            exchange(array, i, smallest);
         }
     }
 
@@ -335,27 +349,27 @@ public final class Sequence {
     public static void selectionSort(double[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
             int largest = 0;
-            for (start = 0; start < (array.length - 1); start++) {
-                largest = start;
-                for (end = start + 1; end < array.length; end++) {
-                    if (array[end] > array[largest]) {
-                        largest = end;
+            for (int i = 0; i < (array.length - 1); i++) {
+                largest = i;
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] > array[largest]) {
+                        largest = j;
                     }
                 }
-                exchange(array, start, largest);
+                exchange(array, i, largest);
             }
             return;
         }
         
         int smallest = 0;
-        for (start = 0; start < (array.length - 1); start++) {
-            smallest = start;
-            for (end = start + 1; end < array.length; end++) {
-                if (array[end] < array[smallest]) {
-                    smallest = end;
+        for (int i = 0; i < (array.length - 1); i++) {
+            smallest = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[smallest]) {
+                    smallest = j;
                 }
             }
-            exchange(array, start, smallest);
+            exchange(array, i, smallest);
         }
     }
 
@@ -372,27 +386,27 @@ public final class Sequence {
     public static void selectionSort(float[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
             int largest = 0;
-            for (start = 0; start < (array.length - 1); start++) {
-                largest = start;
-                for (end = start + 1; end < array.length; end++) {
-                    if (array[end] > array[largest]) {
-                        largest = end;
+            for (int i = 0; i < (array.length - 1); i++) {
+                largest = i;
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] > array[largest]) {
+                        largest = j;
                     }
                 }
-                exchange(array, start, largest);
+                exchange(array, i, largest);
             }
             return;
         }
         
         int smallest = 0;
-        for (start = 0; start < (array.length - 1); start++) {
-            smallest = start;
-            for (end = start + 1; end < array.length; end++) {
-                if (array[end] < array[smallest]) {
-                    smallest = end;
+        for (int i = 0; i < (array.length - 1); i++) {
+            smallest = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[smallest]) {
+                    smallest = j;
                 }
             }
-            exchange(array, start, smallest);
+            exchange(array, i, smallest);
         }
     }
 
@@ -409,27 +423,27 @@ public final class Sequence {
     public static void selectionSort(int[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
             int largest = 0;
-            for (start = 0; start < (array.length - 1); start++) {
-                largest = start;
-                for (end = start + 1; end < array.length; end++) {
-                    if (array[end] > array[largest]) {
-                        largest = end;
+            for (int i = 0; i < (array.length - 1); i++) {
+                largest = i;
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] > array[largest]) {
+                        largest = j;
                     }
                 }
-                exchange(array, start, largest);
+                exchange(array, i, largest);
             }
             return;
         }
         
         int smallest = 0;
-        for (start = 0; start < (array.length - 1); start++) {
-            smallest = start;
-            for (end = start + 1; end < array.length; end++) {
-                if (array[end] < array[smallest]) {
-                    smallest = end;
+        for (int i = 0; i < (array.length - 1); i++) {
+            smallest = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[smallest]) {
+                    smallest = j;
                 }
             }
-            exchange(array, start, smallest);
+            exchange(array, i, smallest);
         }
     }
 
@@ -446,27 +460,27 @@ public final class Sequence {
     public static void selectionSort(long[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
             int largest = 0;
-            for (start = 0; start < (array.length - 1); start++) {
-                largest = start;
-                for (end = start + 1; end < array.length; end++) {
-                    if (array[end] > array[largest]) {
-                        largest = end;
+            for (int i = 0; i < (array.length - 1); i++) {
+                largest = i;
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] > array[largest]) {
+                        largest = j;
                     }
                 }
-                exchange(array, start, largest);
+                exchange(array, i, largest);
             }
             return;
         }
         
         int smallest = 0;
-        for (start = 0; start < (array.length - 1); start++) {
-            smallest = start;
-            for (end = start + 1; end < array.length; end++) {
-                if (array[end] < array[smallest]) {
-                    smallest = end;
+        for (int i = 0; i < (array.length - 1); i++) {
+            smallest = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[smallest]) {
+                    smallest = j;
                 }
             }
-            exchange(array, start, smallest);
+            exchange(array, i, smallest);
         }
     }
 
@@ -483,27 +497,27 @@ public final class Sequence {
     public static void selectionSort(short[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
             int largest = 0;
-            for (start = 0; start < (array.length - 1); start++) {
-                largest = start;
-                for (end = start + 1; end < array.length; end++) {
-                    if (array[end] > array[largest]) {
-                        largest = end;
+            for (int i = 0; i < (array.length - 1); i++) {
+                largest = i;
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] > array[largest]) {
+                        largest = j;
                     }
                 }
-                exchange(array, start, largest);
+                exchange(array, i, largest);
             }
             return;
         }
         
         int smallest = 0;
-        for (start = 0; start < (array.length - 1); start++) {
-            smallest = start;
-            for (end = start + 1; end < array.length; end++) {
-                if (array[end] < array[smallest]) {
-                    smallest = end;
+        for (int i = 0; i < (array.length - 1); i++) {
+            smallest = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[smallest]) {
+                    smallest = j;
                 }
             }
-            exchange(array, start, smallest);
+            exchange(array, i, smallest);
         }
     }
 
@@ -520,27 +534,27 @@ public final class Sequence {
     public static <T extends Comparable<T>> void selectionSort(T[] array, boolean nonincreasingOrder) {
         if (nonincreasingOrder) {
             int largest = 0;
-            for (start = 0; start < (array.length - 1); start++) {
-                largest = start;
-                for (end = start + 1; end < array.length; end++) {
-                    if (array[end].compareTo(array[largest]) > 0) {
-                        largest = end;
+            for (int i = 0; i < (array.length - 1); i++) {
+                largest = i;
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j].compareTo(array[largest]) > 0) {
+                        largest = j;
                     }
                 }
-                exchange(array, start, largest);
+                exchange(array, i, largest);
             }
             return;
         }
         
         int smallest = 0;
-        for (start = 0; start < (array.length - 1); start++) {
-            smallest = start;
-            for (end = start + 1; end < array.length; end++) {
-                if (array[end].compareTo(array[smallest]) < 0) {
-                    smallest = end;
+        for (int i = 0; i < (array.length - 1); i++) {
+            smallest = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j].compareTo(array[smallest]) < 0) {
+                    smallest = j;
                 }
             }
-            exchange(array, start, smallest);
+            exchange(array, i, smallest);
         }
     }
 
