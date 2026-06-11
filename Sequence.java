@@ -1,7 +1,7 @@
 /*
 * Algorithms: Insertion sort, Selection sort
 * Abstract data type: Sequence
-* Version: 0.2.7
+* Version: 0.2.8
 * Author: Mohammad Hasan
 */
 package algo;
@@ -10,11 +10,11 @@ public final class Sequence {
 
     private Sequence() {}
 
-    public static void insertionSort(byte[] array, boolean nonincreasingOrder) {
+    public static void insertionSort(byte[] array, boolean isNonincreasingOrder) {
         byte key = 0;
         int i = 0;
 
-        if (nonincreasingOrder) {
+        if (isNonincreasingOrder) {
             for (int j = 1; j < array.length; j++) {
                 key = array[j];
                 i = j - 1;
@@ -42,11 +42,11 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static void insertionSort(char[] array, boolean nonincreasingOrder) {
+    public static void insertionSort(char[] array, boolean isNonincreasingOrder) {
         char key = '0';
         int i = 0;
 
-        if (nonincreasingOrder) {
+        if (isNonincreasingOrder) {
             for (int j = 1; j < array.length; j++) {
                 key = array[j];
                 i = j - 1;
@@ -74,11 +74,11 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static void insertionSort(double[] array, boolean nonincreasingOrder) {
+    public static void insertionSort(double[] array, boolean isNonincreasingOrder) {
         double key = 0.0;
         int i = 0;
 
-        if (nonincreasingOrder) {
+        if (isNonincreasingOrder) {
             for (int j = 1; j < array.length; j++) {
                 key = array[j];
                 i = j - 1;
@@ -106,11 +106,11 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static void insertionSort(float[] array, boolean nonincreasingOrder) {
+    public static void insertionSort(float[] array, boolean isNonincreasingOrder) {
         float key = 0.0f;
         int i = 0;
 
-        if (nonincreasingOrder) {
+        if (isNonincreasingOrder) {
             for (int j = 1; j < array.length; j++) {
                 key = array[j];
                 i = j - 1;
@@ -138,11 +138,11 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static void insertionSort(int[] array, boolean nonincreasingOrder) {
+    public static void insertionSort(int[] array, boolean isNonincreasingOrder) {
         int key = 0;
         int i = 0;
 
-        if (nonincreasingOrder) {
+        if (isNonincreasingOrder) {
             for (int j = 1; j < array.length; j++) {
                 key = array[j];
                 i = j - 1;
@@ -170,11 +170,11 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static void insertionSort(long[] array, boolean nonincreasingOrder) {
+    public static void insertionSort(long[] array, boolean isNonincreasingOrder) {
         long key = 0L;
         int i = 0;
 
-        if (nonincreasingOrder) {
+        if (isNonincreasingOrder) {
             for (int j = 1; j < array.length; j++) {
                 key = array[j];
                 i = j - 1;
@@ -202,11 +202,11 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static void insertionSort(short[] array, boolean nonincreasingOrder) {
+    public static void insertionSort(short[] array, boolean isNonincreasingOrder) {
         short key = 0;
         int i = 0;
 
-        if (nonincreasingOrder) {
+        if (isNonincreasingOrder) {
             for (int j = 1; j < array.length; j++) {
                 key = array[j];
                 i = j - 1;
@@ -234,11 +234,11 @@ public final class Sequence {
         insertionSort(array, false);
     }
 
-    public static <T extends Comparable<T>> void insertionSort(T[] array, boolean nonincreasingOrder) {
+    public static <T extends Comparable<T>> void insertionSort(T[] array, boolean isNonincreasingOrder) {
         T key = null;
         int i = 0;
 
-        if (nonincreasingOrder) {
+        if (isNonincreasingOrder) {
             for (int j = 1; j < array.length; j++) {
                 key = array[j];
                 i = j - 1;
@@ -272,8 +272,8 @@ public final class Sequence {
         array[j] = temporary;
     }
 
-    public static void selectionSort(byte[] array, boolean nonincreasingOrder) {
-        if (nonincreasingOrder) {
+    public static void selectionSort(byte[] array, boolean isNonincreasingOrder) {
+        if (isNonincreasingOrder) {
             int largest = 0;
             for (int i = 0; i < (array.length - 1); i++) {
                 largest = i;
@@ -309,8 +309,8 @@ public final class Sequence {
         array[j] = temporary;
     }
 
-    public static void selectionSort(char[] array, boolean nonincreasingOrder) {
-        if (nonincreasingOrder) {
+    public static void selectionSort(char[] array, boolean isNonincreasingOrder) {
+        if (isNonincreasingOrder) {
             int largest = 0;
             for (int i = 0; i < (array.length - 1); i++) {
                 largest = i;
@@ -346,8 +346,8 @@ public final class Sequence {
         array[j] = temporary;
     }
 
-    public static void selectionSort(double[] array, boolean nonincreasingOrder) {
-        if (nonincreasingOrder) {
+    public static void selectionSort(double[] array, boolean isNonincreasingOrder) {
+        if (isNonincreasingOrder) {
             int largest = 0;
             for (int i = 0; i < (array.length - 1); i++) {
                 largest = i;
@@ -383,8 +383,8 @@ public final class Sequence {
         array[j] = temporary;
     }
 
-    public static void selectionSort(float[] array, boolean nonincreasingOrder) {
-        if (nonincreasingOrder) {
+    public static void selectionSort(float[] array, boolean isNonincreasingOrder) {
+        if (isNonincreasingOrder) {
             int largest = 0;
             for (int i = 0; i < (array.length - 1); i++) {
                 largest = i;
@@ -420,8 +420,8 @@ public final class Sequence {
         array[j] = temporary;
     }
 
-    public static void selectionSort(int[] array, boolean nonincreasingOrder) {
-        if (nonincreasingOrder) {
+    public static void selectionSort(int[] array, boolean isNonincreasingOrder) {
+        if (isNonincreasingOrder) {
             int largest = 0;
             for (int i = 0; i < (array.length - 1); i++) {
                 largest = i;
@@ -457,8 +457,8 @@ public final class Sequence {
         array[j] = temporary;
     }
 
-    public static void selectionSort(long[] array, boolean nonincreasingOrder) {
-        if (nonincreasingOrder) {
+    public static void selectionSort(long[] array, boolean isNonincreasingOrder) {
+        if (isNonincreasingOrder) {
             int largest = 0;
             for (int i = 0; i < (array.length - 1); i++) {
                 largest = i;
@@ -494,8 +494,8 @@ public final class Sequence {
         array[j] = temporary;
     }
 
-    public static void selectionSort(short[] array, boolean nonincreasingOrder) {
-        if (nonincreasingOrder) {
+    public static void selectionSort(short[] array, boolean isNonincreasingOrder) {
+        if (isNonincreasingOrder) {
             int largest = 0;
             for (int i = 0; i < (array.length - 1); i++) {
                 largest = i;
@@ -531,8 +531,8 @@ public final class Sequence {
         array[j] = temporary;
     }
 
-    public static <T extends Comparable<T>> void selectionSort(T[] array, boolean nonincreasingOrder) {
-        if (nonincreasingOrder) {
+    public static <T extends Comparable<T>> void selectionSort(T[] array, boolean isNonincreasingOrder) {
+        if (isNonincreasingOrder) {
             int largest = 0;
             for (int i = 0; i < (array.length - 1); i++) {
                 largest = i;
@@ -560,5 +560,68 @@ public final class Sequence {
 
     public static <T extends Comparable<T>> void selectionSort(T[] array) {
         selectionSort(array, false);
+    }
+
+    private static void merge(byte[] array, int p, int q, int r, boolean isNonincreasingOrder) {
+        int n1 = q - p + 1;
+        int n2 = r - q;
+
+        byte[] left = new byte[n1];
+        byte[] right = new byte[n2];
+
+        for (int i = 0; i < n1; i++) {
+            left[i] = array[p + i];
+        }
+
+        for (int j = 0; j < n2; j++) {
+            right[j] = array[q + j + 1];
+        }
+
+        int i = 0;
+        int j = 0;
+
+        if (isNonincreasingOrder) {
+            for (int k = p; k < (r + 1); k++) {
+                if (left[i] >= right[j]) {
+                    array[k] = left[i];
+                    i++;
+                } else {
+                    array[k] = right[j];
+                    j++;
+                }
+            }
+            return;
+        }
+
+        for (int k = p; k < (r + 1); k++) {
+            if (left[i] <= right[j]) {
+                array[k] = left[i];
+                i++;
+            } else {
+                array[k] = right[j];
+                j++;
+            }
+        }
+    }
+
+    private static void mergeSort(byte[] array, int p, int r, boolean isNonincreasingOrder) {
+        if (p < r) {
+            int q = (p + r) / 2;
+            mergeSort(array, p, q, isNonincreasingOrder);
+            mergeSort(array, (q + 1), r, isNonincreasingOrder);
+            merge(array, p, q, r, isNonincreasingOrder);
+        }
+    }
+
+    public static void mergeSort(byte[] array, boolean isNonincreasingOrder) {
+        if (isNonincreasingOrder) {
+            mergeSort(array, 0, (array.length - 1), true);
+        } else {
+            mergeSort(array, 0, (array.length - 1), false);
+        }
+    }
+
+    public static void mergeSort(byte[] array) {
+        mergeSort(array, false);
     }
 }
