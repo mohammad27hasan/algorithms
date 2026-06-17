@@ -1,7 +1,7 @@
 /*
 * Algorithms: Insertion sort, Selection sort
 * Abstract data type: Sequence
-* Version: 0.2.8
+* Version: 0.2.9
 * Author: Mohammad Hasan
 */
 package algo;
@@ -566,8 +566,8 @@ public final class Sequence {
         int n1 = q - p + 1;
         int n2 = r - q;
 
-        byte[] left = new byte[n1];
-        byte[] right = new byte[n2];
+        byte[] left = new byte[n1 + 1];
+        byte[] right = new byte[n2 + 1];
 
         for (int i = 0; i < n1; i++) {
             left[i] = array[p + i];
@@ -576,6 +576,9 @@ public final class Sequence {
         for (int j = 0; j < n2; j++) {
             right[j] = array[q + j + 1];
         }
+
+        left[n1] = Byte.MAX_VALUE;
+        right[n2] = Byte.MAX_VALUE;
 
         int i = 0;
         int j = 0;
